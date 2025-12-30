@@ -13,3 +13,6 @@ export default function App() {
                         <h1 className="text-xl font-bold text-gray-900">Trac</h1>
                     </div>
                     <ConnectWallet />
+                </div>
+            </header>
+
