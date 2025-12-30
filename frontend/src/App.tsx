@@ -46,3 +46,6 @@ export default function App() {
                                 </button>
                             </div>
                         </div>
+                        <div className="bg-gray-50 px-8 py-4 border-t border-gray-100 flex justify-between items-center text-sm text-gray-500">
+                            <span>Recent Scans</span>
+                            <span className="hover:text-indigo-600 cursor-pointer">View History &rarr;</span>
