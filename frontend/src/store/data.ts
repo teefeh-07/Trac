@@ -1,0 +1,2 @@
+export const dataStore = { data: [] };
+// Created at 2025-12-30T04:02:49.042Z
