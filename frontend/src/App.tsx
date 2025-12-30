@@ -31,3 +31,6 @@ export default function App() {
                         <div className="p-8">
                             <label htmlFor="product-id" className="block text-sm font-medium text-gray-700 mb-2">
                                 Track Product
+                            </label>
+                            <div className="flex gap-4">
+                                <input
