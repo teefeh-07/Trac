@@ -225,3 +225,5 @@
 - [2025-12-30T06:00:40.213Z] feat/api-types: Commit 8
 - [2025-12-30T06:00:49.444Z] feat/api-types: Commit 9
 - [2025-12-30T06:00:55.212Z] feat/api-types: Commit 10
+- [2025-12-30T06:01:06.638Z] feat/store-user: Commit 1
+- [2025-12-30T06:01:10.671Z] feat/store-user: Commit 2
