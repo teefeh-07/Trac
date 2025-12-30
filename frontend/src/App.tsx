@@ -22,3 +22,6 @@ export default function App() {
                         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
                             Supply Chain Transparency
                         </h2>
+                        <p className="mt-4 text-lg text-gray-500">
+                            Verify authenticity and track journey from origin to consumer.
+                        </p>
