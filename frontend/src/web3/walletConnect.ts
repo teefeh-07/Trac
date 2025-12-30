@@ -10,3 +10,12 @@ export const initWalletConnect = async () => {
         });
 
         const web3wallet = await Web3Wallet.init({
+            core,
+            metadata: {
+                name: 'Trac',
+                description: 'Supply Chain Transparency Platform',
+                url: window.location.origin,
+                icons: [`${window.location.origin}/vite.svg`],
+            },
+        });
+
