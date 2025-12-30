@@ -25,3 +25,6 @@ export default function App() {
                         <p className="mt-4 text-lg text-gray-500">
                             Verify authenticity and track journey from origin to consumer.
                         </p>
+                    </div>
+
+                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
