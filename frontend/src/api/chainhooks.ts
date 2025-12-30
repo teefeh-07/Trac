@@ -19,3 +19,6 @@ export const registerTrackingHook = async (contractAddress: string, contractName
                     'if_this': {
                         'scope': 'contract_call',
                         'contract_identifier': `${contractAddress}.${contractName}`,
+                        'method': 'update-status'
+                    },
+                    'then_that': {
