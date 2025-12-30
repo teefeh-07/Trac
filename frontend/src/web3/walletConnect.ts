@@ -19,3 +19,6 @@ export const initWalletConnect = async () => {
             },
         });
 
+        console.log('WalletConnect initialized:', web3wallet.metadata);
+        return web3wallet;
+    } catch (error) {
