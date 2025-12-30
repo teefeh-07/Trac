@@ -70,3 +70,6 @@ export default function App() {
                             <p className="mt-2 text-gray-500">Instant status changes recorded on Stacks blockchain.</p>
                         </div>
                     </div>
+
+                </div>
+            </main>
