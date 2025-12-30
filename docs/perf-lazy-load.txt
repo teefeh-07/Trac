@@ -5,3 +5,4 @@ Micro update 4 for perf-lazy-load
 Micro update 5 for perf-lazy-load
 Micro update 1 for perf-lazy-load
 Micro update 2 for perf-lazy-load
+Micro update 3 for perf-lazy-load
