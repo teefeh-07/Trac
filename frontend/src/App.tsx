@@ -28,3 +28,6 @@ export default function App() {
                     </div>
 
                     <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
+                        <div className="p-8">
+                            <label htmlFor="product-id" className="block text-sm font-medium text-gray-700 mb-2">
+                                Track Product
