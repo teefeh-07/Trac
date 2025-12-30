@@ -3,3 +3,4 @@ Micro update 2 for notification-service
 Micro update 3 for notification-service
 Micro update 4 for notification-service
 Micro update 5 for notification-service
+Micro update 1 for notification-service
