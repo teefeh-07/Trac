@@ -9,3 +9,4 @@ Documentation for chainhook-parser.
 // Update 5: 2025-12-30T04:05:47.566Z
 // Update 6: 2025-12-30T04:05:48.076Z
 // Update 7: 2025-12-30T04:05:48.671Z
+// Update 8: 2025-12-30T04:05:49.394Z
