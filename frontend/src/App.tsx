@@ -64,3 +64,6 @@ export default function App() {
 
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                             <div className="h-10 w-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <h3 className="text-lg font-medium text-gray-900">Real-time Updates</h3>
