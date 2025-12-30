@@ -79,3 +79,6 @@ export default function App() {
                     <p className="text-center text-gray-400 text-sm">
                         &copy; 2024 Trac Supply Chain. Built on Stacks.
                     </p>
+                </div>
+            </footer>
+        </div>
