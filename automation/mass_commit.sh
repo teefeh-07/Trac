@@ -63,7 +63,7 @@ TASKS=(
 
 count=0
 for task in "${TASKS[@]}"; do
-    commit_spam "feat/$task" 9 "$task"
+    commit_spam "feat/$task" 5 "$task"
     count=$((count+1))
 done
 
