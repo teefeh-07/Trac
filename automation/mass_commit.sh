@@ -21,8 +21,8 @@ commit_spam() {
     git checkout -b $BRANCH || git checkout $BRANCH
     
     for i in $(seq 1 $COUNT); do
-        echo "Micro update $i for $TASK" >> "docs/$TASK.log"
-        git add "docs/$TASK.log"
+        echo "Micro update $i for $TASK" >> "docs/$TASK.txt"
+        git add "docs/$TASK.txt"
         git commit -m "feat: $TASK - update $i implementation details"
     done
     
