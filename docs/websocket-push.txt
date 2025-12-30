@@ -4,3 +4,4 @@ Micro update 3 for websocket-push
 Micro update 4 for websocket-push
 Micro update 5 for websocket-push
 Micro update 1 for websocket-push
+Micro update 2 for websocket-push
