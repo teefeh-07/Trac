@@ -13,3 +13,6 @@ export const registerTrackingHook = async (contractAddress: string, contractName
             name: 'product-updates',
             uuid: 'trackr-product-updates',
             chain: 'stacks',
+            version: 1,
+            networks: {
+                'mainnet': {
