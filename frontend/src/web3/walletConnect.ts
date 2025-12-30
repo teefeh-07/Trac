@@ -7,3 +7,6 @@ export const initWalletConnect = async () => {
     try {
         const core = new Core({
             projectId: PROJECT_ID,
+        });
+
+        const web3wallet = await Web3Wallet.init({
