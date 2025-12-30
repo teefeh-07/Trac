@@ -8,8 +8,11 @@ set -e
 echo "Starting Mass Commit..."
 
 # Ensure we are on main
-git checkout main || true
 rm -f .git/index.lock || true
+git add .
+git stash
+git checkout main || true
+git pull origin main || true
 
 # Helper
 commit_spam() {
