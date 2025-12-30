@@ -2,8 +2,4 @@ Micro update 1 for ab-testing
 Micro update 2 for ab-testing
 Micro update 3 for ab-testing
 Micro update 4 for ab-testing
-Micro update 1 for ab-testing
-Micro update 2 for ab-testing
-Micro update 3 for ab-testing
-Micro update 4 for ab-testing
 Micro update 5 for ab-testing
