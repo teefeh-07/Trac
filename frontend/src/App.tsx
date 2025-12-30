@@ -37,3 +37,6 @@ export default function App() {
                                     id="product-id"
                                     type="text"
                                     value={productId}
+                                    onChange={(e) => setProductId(e.target.value)}
+                                    placeholder="Enter Product ID (e.g. 1042)"
+                                    className="flex-1 min-w-0 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
