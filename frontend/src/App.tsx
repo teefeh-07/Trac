@@ -67,3 +67,6 @@ export default function App() {
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             </div>
                             <h3 className="text-lg font-medium text-gray-900">Real-time Updates</h3>
+                            <p className="mt-2 text-gray-500">Instant status changes recorded on Stacks blockchain.</p>
+                        </div>
+                    </div>
