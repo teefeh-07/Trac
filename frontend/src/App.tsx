@@ -61,3 +61,6 @@ export default function App() {
                             <h3 className="text-lg font-medium text-gray-900">Verified Origin</h3>
                             <p className="mt-2 text-gray-500">Cryptographically signed by certified manufacturers.</p>
                         </div>
+
+                        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div className="h-10 w-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
