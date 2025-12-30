@@ -7,5 +7,3 @@ export const fetchtypes = async () => { return []; };
 // Update 5: 2025-12-30T06:00:32.385Z
 // Update 6: 2025-12-30T06:00:35.557Z
 // Update 7: 2025-12-30T06:00:40.213Z
-// Update 8: 2025-12-30T06:00:49.444Z
-// Update 9: 2025-12-30T06:00:55.212Z
