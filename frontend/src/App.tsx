@@ -40,3 +40,6 @@ export default function App() {
                                     onChange={(e) => setProductId(e.target.value)}
                                     placeholder="Enter Product ID (e.g. 1042)"
                                     className="flex-1 min-w-0 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                />
+                                <button className="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/30">
+                                    Track
