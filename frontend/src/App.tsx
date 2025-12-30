@@ -10,3 +10,6 @@ export default function App() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     <div className="flex items-center">
                         <div className="w-8 h-8 bg-indigo-600 rounded-lg mr-3"></div>
+                        <h1 className="text-xl font-bold text-gray-900">Trac</h1>
+                    </div>
+                    <ConnectWallet />
