@@ -34,3 +34,6 @@ export default function App() {
                             </label>
                             <div className="flex gap-4">
                                 <input
+                                    id="product-id"
+                                    type="text"
+                                    value={productId}
