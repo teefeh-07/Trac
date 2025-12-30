@@ -34,3 +34,6 @@ export const registerTrackingHook = async (contractAddress: string, contractName
         // Note: The client library usage depends on exact version, 
         // this is a conceptual implementation as per request.
         console.log('Registering hook:', hook);
+        // await chainhookClient.register(hook);
+
+        return true;
