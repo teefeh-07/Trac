@@ -6,23 +6,23 @@ const TOTAL_BRANCHES = 80;
 const COMMITS_PER_BRANCH = 10;
 
 const TASKS = [
-  'project-init', 'setup-ci', 'config-update', 'add-dependencies', 'refactor-utils',
-  'docs-update', 'test-coverage', 'ui-layout', 'ui-header', 'ui-footer',
-  'ui-sidebar', 'ui-button', 'ui-input', 'ui-form', 'ui-modal',
-  'ui-card', 'ui-table', 'ui-list', 'ui-icon', 'ui-theme',
-  'auth-login', 'auth-register', 'auth-recover', 'auth-2fa', 'auth-oauth',
-  'api-client', 'api-endpoints', 'api-interceptors', 'api-mock', 'api-types',
-  'store-user', 'store-settings', 'store-data', 'store-cache', 'store-sync',
-  'web3-connect', 'web3-wallet', 'web3-transaction', 'web3-contract', 'web3-events',
-  'chainhook-listener', 'chainhook-parser', 'chainhook-store', 'chainhook-ui', 'chainhook-retry',
-  'contract-trait', 'contract-dao', 'contract-token', 'contract-vesting', 'contract-voting',
-  'guard-admin', 'guard-moderator', 'guard-user', 'guard-guest', 'guard-bot',
-  'util-date', 'util-string', 'util-number', 'util-array', 'util-object',
-  'test-e2e', 'test-unit', 'test-integration', 'test-smoke', 'test-perf',
-  'deploy-script', 'deploy-config', 'deploy-audit', 'deploy-verify', 'deploy-rollback',
-  'optimize-build', 'optimize-images', 'optimize-fonts', 'optimize-bundles', 'optimize-css',
-  'a11y-audit', 'a11y-labels', 'a11y-focus', 'a11y-contrast', 'a11y-nav',
-  'seo-meta', 'seo-sitemap', 'seo-robots', 'seo-schema', 'seo-analytics'
+    'project-init', 'setup-ci', 'config-update', 'add-dependencies', 'refactor-utils',
+    'docs-update', 'test-coverage', 'ui-layout', 'ui-header', 'ui-footer',
+    'ui-sidebar', 'ui-button', 'ui-input', 'ui-form', 'ui-modal',
+    'ui-card', 'ui-table', 'ui-list', 'ui-icon', 'ui-theme',
+    'auth-login', 'auth-register', 'auth-recover', 'auth-2fa', 'auth-oauth',
+    'api-client', 'api-endpoints', 'api-interceptors', 'api-mock', 'api-types',
+    'store-user', 'store-settings', 'store-data', 'store-cache', 'store-sync',
+    'web3-connect', 'web3-wallet', 'web3-transaction', 'web3-contract', 'web3-events',
+    'chainhook-listener', 'chainhook-parser', 'chainhook-store', 'chainhook-ui', 'chainhook-retry',
+    'contract-trait', 'contract-dao', 'contract-token', 'contract-vesting', 'contract-voting',
+    'guard-admin', 'guard-moderator', 'guard-user', 'guard-guest', 'guard-bot',
+    'util-date', 'util-string', 'util-number', 'util-array', 'util-object',
+    'test-e2e', 'test-unit', 'test-integration', 'test-smoke', 'test-perf',
+    'deploy-script', 'deploy-config', 'deploy-audit', 'deploy-verify', 'deploy-rollback',
+    'optimize-build', 'optimize-images', 'optimize-fonts', 'optimize-bundles', 'optimize-css',
+    'a11y-audit', 'a11y-labels', 'a11y-focus', 'a11y-contrast', 'a11y-nav',
+    'seo-meta', 'seo-sitemap', 'seo-robots', 'seo-schema', 'seo-analytics'
 ];
 
 // Ensure we have enough tasks
@@ -59,49 +59,70 @@ async function main() {
         fs.writeFileSync(LOG_FILE, '# Project Activity Log\n\n');
     }
 
+
     // Iterate through tasks/branches
     for (let i = 0; i < TASKS.length; i++) {
         const task = TASKS[i];
         const branchName = `feat/${task}`;
-        
-        console.log(`[${i+1}/${TASKS.length}] Processing branch: ${branchName}`);
-        
+
+        console.log(`[${i + 1}/${TASKS.length}] Processing branch: ${branchName}`);
+
         // Create/Checkout branch
         run(`git checkout -b ${branchName}`);
-        
+
+        // Define target file based on task type
+        let targetFile = '';
+        let content = '';
+
+        if (task.startsWith('ui-')) {
+            const componentName = task.split('-')[1].charAt(0).toUpperCase() + task.split('-')[1].slice(1);
+            targetFile = `frontend/src/components/${componentName}.tsx`;
+            content = `export const ${componentName} = () => <div>${componentName} Component</div>;`;
+        } else if (task.startsWith('store-')) {
+            targetFile = `frontend/src/store/${task.split('-')[1]}.ts`;
+            content = `export const ${task.split('-')[1]}Store = { data: [] };`;
+        } else if (task.startsWith('api-')) {
+            targetFile = `frontend/src/api/${task.split('-')[1]}.ts`;
+            content = `export const fetch${task.split('-')[1]} = async () => { return []; };`;
+        } else if (task.startsWith('web3-')) {
+            targetFile = `frontend/src/web3/${task.split('-')[1]}.ts`;
+            content = `export const ${task.split('-')[1]}Service = { init: () => console.log('Init') };`;
+        } else {
+            targetFile = `docs/${task}.md`;
+            content = `# ${task}\n\nDocumentation for ${task}.`;
+        }
+
+        // Ensure directory exists
+        const dir = path.dirname(targetFile);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+
         // Generate Micro-Commits
         for (let j = 0; j < COMMITS_PER_BRANCH; j++) {
-            // Modify file
             const timestamp = new Date().toISOString();
-            const logEntry = `- [${timestamp}] Update for ${task} part ${j+1}\n`;
-            fs.appendFileSync(LOG_FILE, logEntry);
-            
-            // Add other dummy files occasionally
-            if (Math.random() > 0.7) {
-                const dummyFile = `src/components/${task}.txt`;
-                if (!fs.existsSync(path.dirname(dummyFile))) {
-                    fs.mkdirSync(path.dirname(dummyFile), { recursive: true });
-                }
-                fs.writeFileSync(dummyFile, `Log ${timestamp}`);
-                run(`git add ${dummyFile}`);
+
+            // On first commit, create the file if not exists, else append
+            if (j === 0 && !fs.existsSync(targetFile)) {
+                fs.writeFileSync(targetFile, content + `\n// Created at ${timestamp}\n`);
+            } else {
+                fs.appendFileSync(targetFile, `// Update ${j}: ${timestamp}\n`);
             }
 
+            // Also update the log
+            const logEntry = `- [${timestamp}] ${branchName}: Commit ${j + 1}\n`;
+            fs.appendFileSync(LOG_FILE, logEntry);
+
             // Git operations
-            run(`git add ${LOG_FILE}`);
+            run(`git add .`);
             const msg = randomCommitMessage(task);
             run(`git commit -m "${msg}"`);
         }
-        
-        // Push branch (optional, can be very slow if 80 pushes)
-        // run(`git push origin ${branchName}`);
-        
-        // Switch back to main to branch off again? 
-        // Or branch off the previous?
-        // Usually feature branches come from main.
+
+        // Switch back to main
         run(`git checkout main`);
-        
     }
-    
+
     console.log('Automation Complete.');
 }
 
