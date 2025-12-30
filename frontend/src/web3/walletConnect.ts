@@ -25,3 +25,5 @@ export const initWalletConnect = async () => {
         console.error('Failed to init WalletConnect:', error);
         return null;
     }
+};
+
