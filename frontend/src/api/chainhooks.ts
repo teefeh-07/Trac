@@ -22,3 +22,9 @@ export const registerTrackingHook = async (contractAddress: string, contractName
                         'method': 'update-status'
                     },
                     'then_that': {
+                        'http_post': {
+                            'url': 'https://api.trackr.app/hooks',
+                            'authorization_header': 'Bearer token'
+                        }
+                    }
+                }
