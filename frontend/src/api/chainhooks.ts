@@ -37,3 +37,6 @@ export const registerTrackingHook = async (contractAddress: string, contractName
         // await chainhookClient.register(hook);
 
         return true;
+    } catch (e) {
+        console.error('Chainhook error:', e);
+        return false;
