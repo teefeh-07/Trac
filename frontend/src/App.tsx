@@ -55,3 +55,6 @@ export default function App() {
                     {/* Dashboard Grid */}
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div className="h-10 w-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
